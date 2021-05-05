@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\ProfileRequest;
 use App\Http\Requests\PasswordRequest;
 
+
 class ProfileController extends Controller
 {
     /**
@@ -46,4 +47,12 @@ class ProfileController extends Controller
 
         return back()->withPasswordStatus(__('Password successfully updated.'));
     }
+
+    /**
+     * Change the password
+     *
+     * @param  \App\Http\Requests\PasswordRequest  $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+
 }

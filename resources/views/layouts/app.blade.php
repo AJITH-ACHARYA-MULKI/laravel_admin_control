@@ -19,28 +19,27 @@
         <!-- CSS -->
         <link href="{{ asset('black') }}/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
         <link href="{{ asset('black') }}/css/theme.css" rel="stylesheet" />
-        <style>
 
+        <style type="text/css">
             .float{
-                position:fixed;
-                width:60px;
-                height:60px;
-                bottom:40px;
-                right:40px;
-                background: rgb(209,227,31);
-                background: linear-gradient(
-                    90deg
-                    , rgba(209,227,31,1) 0%, rgba(241,15,213,1) 35%, rgba(0,249,255,1) 100%);
-                color:#FFF;
-                border-radius:50px;
-                text-align:center;
-                box-shadow: 2px 2px 3px #999;
-            }
+        position:fixed;
+        width:50px;
+        height:50px;
+        bottom:40px;
+        right:40px;
+        background-color: #e14eca;
+        color:#FFF;
+        border-radius:50px;
+        text-align:center;
+    }
+    .my-float{
+    
+        margin-top: 19px;
+    }
 
-            .my-float{
-                margin-top:22px;
-            }
+
         </style>
+
     </head>
     <body class="{{ $class ?? '' }}">
         @auth()
@@ -72,43 +71,6 @@
                 </div>
             </div>
         @endauth
-        <div class="fixed-plugin">
-            <div class="dropdown show-dropdown">
-                <a href="#" data-toggle="dropdown">
-                <i class="fa fa-cog fa-2x"> </i>
-                </a>
-                <ul class="dropdown-menu">
-                <li class="header-title"> Sidebar Background</li>
-                <li class="adjustments-line">
-                    <a href="javascript:void(0)" class="switch-trigger background-color">
-                    <div class="badge-colors text-center">
-                        <span class="badge filter badge-primary active" data-color="primary"></span>
-                        <span class="badge filter badge-info" data-color="blue"></span>
-                        <span class="badge filter badge-success" data-color="green"></span>
-                    </div>
-                    <div class="clearfix"></div>
-                    </a>
-                </li>
-                <li class="button-container">
-                    <a href="https://www.creative-tim.com/product/black-dashboard-laravel" target="_blank" class="btn btn-primary btn-block btn-round">Download Now</a>
-                    <a href="https://demos.creative-tim.com/black-dashboard/docs/1.0/getting-started/introduction.html" target="_blank" class="btn btn-default btn-block btn-round">
-                    Documentation
-                    </a>
-                    <a href="https://www.creative-tim.com/product/black-dashboard-pro-laravel" target="_blank" class="btn btn-danger btn-block btn-round">
-                    Upgrade to PRO
-                    </a>
-                </li>
-                <li class="header-title">Thank you for 95 shares!</li>
-                <li class="button-container text-center">
-                    <button id="twitter" class="btn btn-round btn-info"><i class="fab fa-twitter"></i> &middot; 45</button>
-                    <button id="facebook" class="btn btn-round btn-info"><i class="fab fa-facebook-f"></i> &middot; 50</button>
-                    <br>
-                    <br>
-                    <a class="github-button" href="https://github.com/creativetimofficial/black-dashboard-laravel" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
-                </li>
-                </ul>
-            </div>
-        </div>
         <script src="{{ asset('black') }}/js/core/jquery.min.js"></script>
         <script src="{{ asset('black') }}/js/core/popper.min.js"></script>
         <script src="{{ asset('black') }}/js/core/bootstrap.min.js"></script>

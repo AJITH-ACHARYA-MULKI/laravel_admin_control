@@ -25,10 +25,12 @@
                                 <div class="card-body">
                                     <h5>{{$post->caption}}</h5>
                                 </div>
-                                <div class="card-footer">
+                                <div class="card-header d-flex align-items-center">
+                                <div class="d-flex align-items-center" style="display: block;margin: 0 auto;">
                                     {{--                    <img src="{{asset($post->img) }}">--}}
-                                    <img src="{{url('storage/'.$post->img)}}" width="100%" />
+                                    <img src="{{url('storage/'.$post->img)}}" width="80%" style="display: block;margin: 0 auto;" />
                                 </div>
+                            </div>
                                 <div class="card-footer text-right">
                                     <a href="{{route('Comment.show',$post->id)}}" class="btn btn-primary btn-sm">{{\App\Comment::where('post_id',$post->id)->count()}} <i class="fa fa-comment"></i></a>
                                 </div>

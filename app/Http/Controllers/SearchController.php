@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Chat;
 use App\post;
 use App\User;
@@ -9,7 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
-class ChatController extends Controller
+
+class SearchController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,15 +18,10 @@ class ChatController extends Controller
      */
     public function index()
     {
-        //
         $send_id = Auth::user()->id;
         $users= User::where('id','!=',$send_id)->get();
+        return view('Search.view', compact('users'));
 
-        $rec = User::where('id','!=',$send_id)->first();
-        $chats=Chat::where('rec_id',$rec->id)->where('send_id',$send_id)->orwhere('rec_id',$send_id)->where('send_id',$rec->id)->get();
-        $last_msg=Chat::where('rec_id',$send_id)->orwhere('send_id',$send_id)->orderby('id','DESC')->get();
-        // dd($last_msg);
-        return view('Chat.view', compact('users','rec','chats','last_msg'));
     }
 
     /**
@@ -37,7 +32,6 @@ class ChatController extends Controller
     public function create()
     {
         //
-
     }
 
     /**
@@ -48,13 +42,13 @@ class ChatController extends Controller
      */
     public function store(Request $request)
     {
-        //
-       // dd($request->all());
-        $store = ($request->all());
-        unset($store['_token']);
-        $update =Chat::create($store);
-        return Redirect::back();
-
+         $store = ($request->all());
+         $name=$store['name'];
+         unset($store['_token']);
+         $send_id = Auth::user()->id;
+         $users= User::where('id','!=',$send_id)->where('name',$name)->get();
+         // dd($users);
+         return view('Search.view', compact('users'));
     }
 
     /**
@@ -65,14 +59,8 @@ class ChatController extends Controller
      */
     public function show($id)
     {
-        //
-        
-        $send_id = Auth::user()->id;
-        $users= User::where('id','!=',$send_id)->get();
-        $rec = User::where('id',$id)->first();
-        $chats=Chat::where('rec_id',$id)->where('send_id',$send_id)->orwhere('rec_id',$send_id)->where('send_id',$id)->get();
-        $last_msg=Chat::orderby('id','DESC')->get();
-        return view('Chat.view', compact('users','rec','chats','last_msg'));
+        // $id=$id->query('name');
+        dd($id);
     }
 
     /**

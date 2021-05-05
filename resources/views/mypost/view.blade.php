@@ -1,14 +1,14 @@
-@extends('layouts.app', ['pageSlug' => 'dashboard'])
+@extends('layouts.app', ['pageSlug' => 'mypost'])
 @section('content')
     @foreach($posts as $post)
-        <div id="comments">
-            <div class="row">
+        <div id="comments" style="margin: auto;">
+            <div class="row ">
                 <div class="col-md-12">
-                        <div class="card mt-8">
+                        <div class="card mds-8">
                             <div class="card-header">
                                 <div class="row">
                                     <div class="col-1">
-                                        <img src="{{url('storage/'.Auth::user()->img)}}" class="avatar">
+                                        <img src="{{url('storage/'.Auth::user()->img)}}" class="avatar" width="70px" height="70px">
                                     </div>
                                     <div class="col-9">
                                         <a href="" class="text-light font-weight-600 text-sm">{{$post->username}}</a>
@@ -24,7 +24,7 @@
                                         </form>
                                     </div>
                                 </div>
-{{--                                <div class="d-flex align-items-center">--}}
+                                <!-- <div class="d-flex align-items-center">--}}
 {{--                                    <a href="">--}}
 {{--                                        <img src="{{url('storage/'.Auth::user()->img)}}" class="avatar">--}}
 {{--                                    </a>--}}
@@ -41,13 +41,14 @@
 {{--                                            DELETE--}}
 {{--                                        </button>--}}
 {{--                                    </form>--}}
-{{--                                </div>--}}
+{{--                                </div>--}} -->
                             </div>
                             <div class="card-body">
-                                <p class="mb-4">
-                                    {{$post->caption}}                                </p>
-
-                                <div class="text-center"><img alt="Image placeholder" src="{{url('storage/'.$post->img)}}" width="100%"></div>
+                                <p class="mb-4">{{$post->caption}}</p>
+                                <div class="card-header d-flex align-items-center">
+                                <div class="d-flex align-items-center" style="display: block;margin: 0 auto;">
+                                    <img alt="Image placeholder" src="{{url('storage/'.$post->img)}}" width="70%"style="display: block;margin: 0 auto;">
+                                </div></div>
                             </div>
                             <hr style="width:100% ; background-color: #8cfcdc; height: 2.5px; border-color : transparent;">
                         </div>
@@ -57,7 +58,8 @@
     @endforeach
 
     <a href="#" class="float" data-toggle="modal" data-target="#exampleModal">
-        <i class="fa fa-plus my-float"></i>
+        <!-- <button style="height: 60px;width: 60px;border-radius: 50%;background-color: #e14eca;" > -->
+            <i class="fa fa-plus my-float"></i>
     </a>
 
     <!-- Modal -->

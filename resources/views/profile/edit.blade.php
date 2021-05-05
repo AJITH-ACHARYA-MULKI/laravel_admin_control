@@ -95,9 +95,7 @@
                                 <img class="avatar" src="{{url('storage/'.Auth::user()->img)}}" alt="">
                                 <h5 class="title">{{ auth()->user()->name }}</h5>
                             </a>
-                            <p class="description">
-                                {{ __('Ceo/Co-Founder') }}
-                            </p>
+                            
                         </div>
                     </p>
                     <div class="card-description">

@@ -10,7 +10,7 @@
                 <div class="description">
                     <h3 class="info-title">{{ __('Marketing') }}</h3>
                     <p class="description">
-                        {{ __('We\'ve created the marketing campaign of the website. It was a very interesting collaboration.') }}
+                        {{ __('Initimate your business with the social life. It was a very interesting collaboration.') }}
                     </p>
                 </div>
             </div>
@@ -19,9 +19,9 @@
                     <i class="tim-icons icon-triangle-right-17"></i>
                 </div>
                 <div class="description">
-                    <h3 class="info-title">{{ __('Fully Coded in HTML5') }}</h3>
+                    <h3 class="info-title">{{ __('Influencer') }}</h3>
                     <p class="description">
-                        {{ __('We\'ve developed the website with HTML5 and CSS3. The client has access to the code using GitHub.') }}
+                        {{ __('Engage,Enlighten, Encourage and especially... be yourself!. Its a community effort, Everyone is an asset.') }}
                     </p>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                 <div class="description">
                     <h3 class="info-title">{{ __('Built Audience') }}</h3>
                     <p class="description">
-                        {{ __('There is also a Fully Customizable CMS Admin Dashboard for this product.') }}
+                        {{ __('Perfect media with perfect partner. Think, Meet, Explore') }}
                     </p>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+// use App\Http\Controller\search;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +23,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
-
+Route::resource('Search', 'SearchController');
 Route::group(['middleware' => 'auth'], function () {
 		Route::get('icons', ['as' => 'pages.icons', 'uses' => 'PageController@icons']);
 		Route::get('maps', ['as' => 'pages.maps', 'uses' => 'PageController@maps']);
@@ -42,7 +42,7 @@ Route::group(['middleware' => 'auth'], function () {
 });
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('Post', 'PostController');
-
+    // Route::resource('Search', 'SearchController');
     Route::resource('Chat', 'ChatController');
     Route::resource('Comment', 'CommentController');
 });

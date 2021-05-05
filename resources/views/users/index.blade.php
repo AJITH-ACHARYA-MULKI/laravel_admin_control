@@ -31,7 +31,7 @@
         <meta property="og:image" content="https://s3.amazonaws.com/creativetim_bucket/products/164/original/opt_blk_laravel_thumbnail.jpg?1561102244" />
         <meta property="og:description" content="Black Dashboard Laravel is a beautiful Bootstrap 4 admin dashboard with a large number of components, designed to look beautiful and organized. If you are looking for a tool to manage and visualize data about your business, this dashboard is the thing for you." />
         <meta property="og:site_name" content="Creative Tim" />
-        <title>{{ config('app.name', 'Black Dashboard Laravel - Free Laravel Preset') }}</title>
+        <title>{{ config('app.name', 'User Management') }}</title>
         <!-- Favicon -->
         <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('black') }}/img/apple-icon.png">
         <link rel="icon" type="image/png" href="{{ asset('black') }}/img/favicon.png">
@@ -60,82 +60,42 @@
                         <div class="sidebar">
                                 <div class="sidebar-wrapper">
                                     <div class="logo">
-                                        <a href="#" class="simple-text logo-mini">{{ _('BD') }}</a>
-                                        <a href="#" class="simple-text logo-normal">{{ _('Black Dashboard') }}</a>
+                                        <!-- <a href="#" class="simple-text logo-mini">{{ _('BD') }}</a> -->
+                                        <b class="simple-text logo-normal">{{ _('Dashboard') }}</b>
                                     </div>
                                     <ul class="nav">
                                         <li>
-                                            <a href="{{ route('home') }}">
-                                                <i class="tim-icons icon-chart-pie-36"></i>
-                                                <p>{{ _('Dashboard') }}</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a data-toggle="collapse" href="#laravel-examples" aria-expanded="true">
-                                                <i class="fab fa-laravel" ></i>
-                                                <span class="nav-link-text" >{{ __('Laravel Examples') }}</span>
-                                                <b class="caret mt-1"></b>
-                                            </a>
-                            
-                                            <div class="collapse show" id="laravel-examples">
-                                                <ul class="nav pl-4">
-                                                    <li >
-                                                        <a href="{{ route('profile.edit')  }}">
-                                                            <i class="tim-icons icon-single-02"></i>
-                                                            <p>{{ _('User Profile') }}</p>
-                                                        </a>
-                                                    </li>
-                                                    <li class="active">
-                                                        <a href="{{ route('user.index')  }}">
-                                                            <i class="tim-icons icon-bullet-list-67"></i>
-                                                            <p>{{ _('User Management') }}</p>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li >
-                                            <a href="{{ route('pages.icons') }}">
-                                                <i class="tim-icons icon-atom"></i>
-                                                <p>{{ _('Icons') }}</p>
-                                            </a>
-                                        </li>
-                                        <li >
-                                            <a href="{{ route('pages.maps') }}">
-                                                <i class="tim-icons icon-pin"></i>
-                                                <p>{{ _('Maps') }}</p>
-                                            </a>
-                                        </li>
-                                        <li >
-                                            <a href="{{ route('pages.notifications') }}">
-                                                <i class="tim-icons icon-bell-55"></i>
-                                                <p>{{ _('Notifications') }}</p>
-                                            </a>
-                                        </li>
-                                        <li >
-                                            <a href="{{ route('pages.tables') }}">
-                                                <i class="tim-icons icon-puzzle-10"></i>
-                                                <p>{{ _('Table List') }}</p>
-                                            </a>
-                                        </li>
-                                        <li >
-                                            <a href="{{ route('pages.typography') }}">
-                                                <i class="tim-icons icon-align-center"></i>
-                                                <p>{{ _('Typography') }}</p>
-                                            </a>
-                                        </li>
-                                        <li >
-                                            <a href="{{ route('pages.rtl') }}">
-                                                <i class="tim-icons icon-world"></i>
-                                                <p>{{ _('RTL Support') }}</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('pages.upgrade') }}">
-                                                <i class="tim-icons icon-spaceship"></i>
-                                                <p>{{ _('Upgrade to PRO') }}</p>
-                                            </a>
-                                        </li>
+                <a href="{{ route('home') }}">
+                    <i class="tim-icons icon-bank"></i>
+                    <p>{{ __('Home') }}</p>
+                </a>
+            </li>
+            
+                        <li>
+                            <a href="{{ route('profile.edit')  }}">
+                                <i class="tim-icons icon-single-02"></i>
+                                <p>{{ __('User Profile') }}</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('user.index')  }}">
+                                <i class="tim-icons icon-bullet-list-67"></i>
+                                <p>{{ __('User Management') }}</p>
+                            </a>
+                        </li>
+                    
+            <li>
+                <a href="/Chat">
+                    <i class="tim-icons icon-chat-33"></i>
+                    <p>{{ __('Chat') }}</p>
+                </a>
+            </li>
+            <li>
+                <a href="/Post">
+                    <i class="tim-icons icon-image-02"></i>
+                    <p>{{ __('My post') }}</p>
+                </a>
+            </li>
                                     </ul>
                                 </div>
                             </div>
@@ -151,7 +111,7 @@
                                             <span class="navbar-toggler-bar bar3"></span>
                                         </button>
                                     </div>
-                                    <a class="navbar-brand" href="#">{{ $page ?? __('Dashboard') }}</a>
+                                    <a class="navbar-brand" href="#">{{ $page ?? __('MyCircle') }}</a>
                                 </div>
                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                                     <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -294,10 +254,6 @@
                 </nav>
             </div>
         </div>
-        <div class="alert alert-danger">
-                <span>
-                  <b> </b> This is a <b>PRO</b> feature!</span>
-              </div>
     </div>
 </div>
                 </div>
@@ -306,15 +262,15 @@
 <div class="container-fluid">
     <ul class="nav">
         <li class="nav-item">
-            <a href="https://creative-tim.com" target="blank" class="nav-link">
-                Creative Tim
+            <a href="https://MyCircle.com" target="blank" class="nav-link">
+                MyCircle
             </a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <a href="https://updivision.com" target="blank" class="nav-link">
                 Updivision
             </a>
-        </li>
+        </li> -->
         <li class="nav-item">
             <a href="#" class="nav-link">
                 About Us
@@ -327,9 +283,9 @@
         </li>
     </ul>
     <div class="copyright">
-        © 2020 made with <i class="tim-icons icon-heart-2"></i> by
-        <a href="https://creative-tim.com" target="_blank">Creative Tim</a> &amp;
-        <a href="https://updivision.com" target="_blank">Updivision</a> for a better web.
+        © 2021 made with <i class="tim-icons icon-heart-2"></i> by
+        <a href="https://MyCircle.com" target="_blank">MyCircle</a>
+        <!-- <a href="https://updivision.com" target="_blank">Updivision</a> for a better web. -->
     </div>
 </div>
 </footer>
@@ -337,7 +293,7 @@
         </div>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             <input type="hidden" name="_token" value="ub2DzAIrgUnghVvu3l3KAbbq0UztNO8yfkrDNm6n">            </form>
-            <div class="fixed-plugin">
+            <!-- <div class="fixed-plugin">
         <div class="dropdown show-dropdown">
             <a href="#" data-toggle="dropdown">
             <i class="fa fa-cog fa-2x"> </i>
@@ -373,7 +329,7 @@
             </li>
             </ul>
         </div>
-    </div>
+    </div> -->
     <script src="{{ asset('black') }}/js/core/jquery.min.js"></script>
     <script src="{{ asset('black') }}/js/core/popper.min.js"></script>
     <script src="{{ asset('black') }}/js/core/bootstrap.min.js"></script>
