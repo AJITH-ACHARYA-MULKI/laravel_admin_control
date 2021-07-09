@@ -26,7 +26,7 @@ class ChatController extends Controller
         $chats=Chat::where('rec_id',$rec->id)->where('send_id',$send_id)->orwhere('rec_id',$send_id)->where('send_id',$rec->id)->get();
         $last_msg=Chat::where('rec_id',$send_id)->orwhere('send_id',$send_id)->orderby('id','DESC')->get();
         // dd($last_msg);
-        return view('Chat.view', compact('users','rec','chats','last_msg'));
+        return view('chat.view', compact('users','rec','chats','last_msg'));
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\post;
+use App\user;
 
 class HomeController extends Controller
 {
@@ -24,6 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         $posts= post::orderby('id','DESC')->get();
-        return view('dashboard',compact('posts'));
+        $users=user::all();
+        return view('dashboard',compact('posts','users'));
     }
 }

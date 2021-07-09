@@ -6,6 +6,7 @@ use App\post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use File;
 
 class PostController extends Controller
 {
@@ -46,8 +47,18 @@ class PostController extends Controller
         //
         $store=($request->all());
         $file= request()->file('img');
+        // $store['img'] = $file->store('toPath',['disk'=>'public']);
+        
+        // $path2='image/'.$store['img'];
+        // File::copy(base_path($path), public_path($path2));
+        
+        // echo "<img src=".$path.">";
+        // dd($path);
+        
         $store['img'] = $file->store('toPath',['disk'=>'public']);
-
+        // $image=explode("/", $store['img'])[1];
+        // $path1='C:/xampp/htdocs/img/toPath/'.$image;
+        // File::copy('C:/xampp/htdocs/admin_laravel/storage/app/public/'.$store['img'],$path1);
         $submit = Post::create($store);
         return redirect()->route('home');
     }

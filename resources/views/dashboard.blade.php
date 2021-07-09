@@ -1,7 +1,153 @@
 @extends('layouts.app', ['pageSlug' => 'dashboard'])
 
 @section('content')
-    <div class="row">
+   
+        <!-- <div class="row py-3">
+            <div class="col-4">
+                <div class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{{url('storage/'.Auth::user()->img)}}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+            <!-- <div class="w-full p-4 px-5 py-5">
+                <ul class="flex space-x-4 overflow-hidden">
+                    <li class="flex flex-col items-center">
+                        <div class="rounded-full bg-gradient-to-br from-yellow-200 to-red-500 p-1"> <a href="#" class="bg-white p-1 rounded-full block transform transition hover:rotate-6"> <img src="{{url('storage/'.Auth::user()->img)}}" class="rounded-full" width="60"> </a> </div> <span class="text-sm w-16 overflow-hidden overflow-ellipsis">riksy_stam143543</span>
+                    </li>
+                    <li class="flex flex-col items-center">
+                        <div class="rounded-full bg-gradient-to-br from-yellow-200 to-red-500 p-1"> <a href="#" class="bg-white p-1 rounded-full block transform transition hover:rotate-6"> <img src="{{url('storage/'.Auth::user()->img)}}" class="rounded-full" width="60"> </a> </div> <span class="text-sm w-16 overflow-hidden overflow-ellipsis">tina_2342</span>
+                    </li>
+                    <li class="flex flex-col items-center">
+                        <div class="rounded-full bg-gradient-to-br from-yellow-200 to-red-500 p-1"> <a href="#" class="bg-white p-1 rounded-full block transform transition hover:rotate-6"> <img src="{{url('storage/'.Auth::user()->img)}}" class="rounded-full" width="60"> </a> </div> <span class="text-sm w-16 overflow-hidden overflow-ellipsis">sujan_tomy</span>
+                    </li>
+                    <li class="flex flex-col items-center">
+                        <div class="rounded-full bg-gradient-to-br from-yellow-200 to-red-500 p-1"> <a href="#" class="bg-white p-1 rounded-full block transform transition hover:rotate-6"> <img src="{{url('storage/'.Auth::user()->img)}}" class="rounded-full" width="60"> </a> </div> <span class="text-sm w-16 overflow-hidden overflow-ellipsis">rujanta_98432</span>
+                    </li>
+                    <li class="flex flex-col items-center">
+                        <div class="rounded-full bg-gradient-to-br from-yellow-200 to-red-500 p-1"> <a href="#" class="bg-white p-1 rounded-full block transform transition hover:rotate-6"> <img src="{{url('storage/'.Auth::user()->img)}}" class="rounded-full" width="60"> </a> </div> <span class="text-sm w-16 overflow-hidden overflow-ellipsis">rony_dusak2</span>
+                    </li>
+                    <li class="flex flex-col items-center">
+                        <div class="rounded-full bg-gradient-to-br from-yellow-200 to-red-500 p-1"> <a href="#" class="bg-white p-1 rounded-full block transform transition hover:rotate-6"> <img src="{{url('storage/'.Auth::user()->img)}}" class="rounded-full" width="60"> </a> </div> <span class="text-sm w-16 overflow-hidden overflow-ellipsis">tom_hank_fan</span>
+                    </li>
+                </ul>
+            </div> -->
+<style type="text/css">
+
+    .story-container ul{
+        list-style-type: none;
+        user-select: none;
+        display: flex;
+        overflow-y: auto;
+        padding: 20px 0;
+        background-color: #27293d;
+        width: 97%;
+        margin-left: 13px;
+        border-radius: 5px;
+    }
+    .story-container ul li{
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .story-container ul li:first-child{
+        padding-left: 20px;
+    }
+    .story-container ul li:last-child{
+        padding-right: 20px;
+    }
+    .story-container ul li .story{
+        padding:1px;
+        width: 77px;
+        height: 77px;
+        border-radius: 50%;
+        background: rgba(255,255,255,.75);
+        position: relative;
+    }
+    .story-container ul li.has-story .story{
+        padding: 2px;
+        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    }
+    .story-container ul li .story img{
+        padding: 2px;
+        background: currentColor;
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+    }
+    .story-container ul li span{
+        color: rgba(255,255,255,.85);
+        font-weight: 300;
+        font-size: 15px;
+        max-width: 85px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-top: 5px;
+    }
+</style>
+
+<div class="story-container">
+    <ul>
+        @foreach($users as $user)
+        <li class="has-story">
+            <div class="story">
+                <img src="{{url('storage/'.Auth::user()->img)}}">
+            </div>
+            <span class="user">{{$user->name}}</span>
+        </li>
+        @endforeach
+    </ul>
+</div>
+        <!-- <li class="has-story">
+            <div class="story">
+                <img src="{{url('storage/'.Auth::user()->img)}}">
+            </div>
+            <span class="user">your story</span>
+        </li>
+        <li class="has-story">
+            <div class="story">
+                <img src="{{url('storage/'.Auth::user()->img)}}">
+            </div>
+            <span class="user">your story</span>
+        </li>
+        <li class="has-story">
+            <div class="story">
+                <img src="{{url('storage/'.Auth::user()->img)}}">
+            </div>
+            <span class="user">your story</span>
+        </li>
+        <li class="has-story">
+            <div class="story">
+                <img src="{{url('storage/'.Auth::user()->img)}}">
+            </div>
+            <span class="user">your story</span>
+        </li>
+        <li class="has-story">
+            <div class="story">
+                <img src="{{url('storage/'.Auth::user()->img)}}">
+            </div>
+            <span class="user">your story</span>
+        </li>
+        <li class="has-story">
+            <div class="story">
+                <img src="{{url('storage/'.Auth::user()->img)}}">
+            </div>
+            <span class="user">your story</span>
+        </li> -->
+
+
+
+
+
+
+
+<div class="row">
         <div class="col-12">
             <div class="container-fluid">
                 <div class="row justify-content-center">
